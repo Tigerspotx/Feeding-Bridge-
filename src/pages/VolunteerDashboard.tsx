@@ -45,7 +45,7 @@ const VolunteerDashboard = () => {
   const handleStartPickup = (pickupId: string) => {
     const updatedAssignments = assignments.map(assignment => {
       if (assignment.id === pickupId) {
-        return { ...assignment, status: 'in-progress', updatedAt: new Date() };
+        return { ...assignment, status: 'in-progress' as const, updatedAt: new Date() };
       }
       return assignment;
     });
@@ -59,7 +59,7 @@ const VolunteerDashboard = () => {
       if (assignment.id === pickupId) {
         return { 
           ...assignment, 
-          status: 'completed', 
+          status: 'completed' as const, 
           completedTime: new Date(),
           updatedAt: new Date() 
         };

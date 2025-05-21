@@ -42,7 +42,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
     }
     
     const newMap = new google.maps.Map(mapRef.current, {
-      center,
+      center: new google.maps.LatLng(center.lat, center.lng),
       zoom,
       streetViewControl: false,
       mapTypeControl: false,
@@ -65,7 +65,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
   // Update center and zoom when props change
   useEffect(() => {
     if (map) {
-      map.setCenter(center);
+      map.setCenter(new google.maps.LatLng(center.lat, center.lng));
       map.setZoom(zoom);
     }
   }, [center, zoom, map]);
@@ -86,7 +86,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
     // Create new markers
     const newGoogleMarkers = markers.map(marker => {
       const newMarker = new google.maps.Marker({
-        position: marker.position,
+        position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
         map,
         title: marker.title,
         label: marker.label,

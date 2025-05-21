@@ -6,7 +6,6 @@ declare namespace google {
       setCenter(latLng: LatLng): void;
       setZoom(zoom: number): void;
       addListener(event: string, callback: Function): MapsEventListener;
-      setMap(map: Map | null): void;
     }
     
     class Marker {
@@ -45,5 +44,9 @@ declare namespace google {
     interface MapMouseEvent {
       latLng: LatLng;
     }
+
+    const event: {
+      clearListeners(instance: object, eventName: string): void;
+    };
   }
 }
