@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
 import { Button } from '@/components/ui/button';
@@ -40,6 +41,7 @@ import { mockFoodDonations } from '@/data/mockData';
 
 const DonorDashboard = () => {
   const { currentUser } = useAuth();
+  const navigate = useNavigate();
   const [donations, setDonations] = useState<FoodDonation[]>(
     mockFoodDonations.filter(d => d.donorId === currentUser?.id)
   );
@@ -119,10 +121,14 @@ const DonorDashboard = () => {
   
   const sidebarLinks = [
     { to: '/donor-dashboard', icon: <Home />, label: 'Dashboard' },
-    { to: '/donor-dashboard/history', icon: <Calendar />, label: 'Donation History' },
-    { to: '/donor-dashboard/map', icon: <Map />, label: 'View Map' },
+    { to: '/donor-history', icon: <Calendar />, label: 'Donation History' },
+    { to: '/food-map', icon: <Map />, label: 'View Map' },
     { to: '/profile', icon: <User />, label: 'My Profile' },
   ];
+
+  const handleAllDonations = () => {
+    navigate('/donor-history');
+  };
 
   return (
     <DashboardLayout 
@@ -390,7 +396,11 @@ const DonorDashboard = () => {
           </CardContent>
           {donations.length > 5 && (
             <CardFooter>
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={handleAllDonations}
+              >
                 View All Donations
               </Button>
             </CardFooter>

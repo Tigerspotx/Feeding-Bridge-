@@ -16,6 +16,8 @@ import FoodMap from "./pages/FoodMap";
 import ManagePickups from "./pages/ManagePickups";
 import ImpactReports from "./pages/ImpactReports";
 import AboutUs from "./pages/AboutUs";
+import DonorHistory from "./pages/DonorHistory";
+import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +39,8 @@ const App = () => (
             <Route path="/manage-pickups" element={<ManagePickups />} />
             <Route path="/impact-reports" element={<ImpactReports />} />
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/donor-history" element={<DonorHistory />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
