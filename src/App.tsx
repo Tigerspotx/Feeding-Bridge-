@@ -12,6 +12,10 @@ import DonorDashboard from "./pages/DonorDashboard";
 import NGODashboard from "./pages/NGODashboard";
 import VolunteerDashboard from "./pages/VolunteerDashboard";
 import NotFound from "./pages/NotFound";
+import FoodMap from "./pages/FoodMap";
+import ManagePickups from "./pages/ManagePickups";
+import ImpactReports from "./pages/ImpactReports";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +33,10 @@ const App = () => (
             <Route path="/donor-dashboard" element={<DonorDashboard />} />
             <Route path="/ngo-dashboard" element={<NGODashboard />} />
             <Route path="/volunteer-dashboard" element={<VolunteerDashboard />} />
+            <Route path="/food-map" element={<FoodMap />} />
+            <Route path="/manage-pickups" element={<ManagePickups />} />
+            <Route path="/impact-reports" element={<ImpactReports />} />
+            <Route path="/about-us" element={<AboutUs />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

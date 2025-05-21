@@ -35,6 +35,12 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
   useEffect(() => {
     if (!mapRef.current) return;
     
+    // Check if Google Maps API is loaded
+    if (typeof google === 'undefined' || !google.maps) {
+      console.error('Google Maps API not loaded');
+      return;
+    }
+    
     const newMap = new google.maps.Map(mapRef.current, {
       center,
       zoom,
@@ -67,6 +73,12 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
   // Handle markers
   useEffect(() => {
     if (!map) return;
+    
+    // Check if Google Maps API is loaded
+    if (typeof google === 'undefined' || !google.maps) {
+      console.error('Google Maps API not loaded');
+      return;
+    }
     
     // Clear existing markers
     googleMarkers.forEach(marker => marker.setMap(null));
