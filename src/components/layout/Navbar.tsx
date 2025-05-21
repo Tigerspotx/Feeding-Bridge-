@@ -54,7 +54,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-bold text-2xl text-foodbridge-primary">FoodBridge</span>
+          <span className="font-bold text-2xl text-foodbridge-primary">FeedingBridge</span>
         </Link>
 
         {/* Desktop Navigation */}

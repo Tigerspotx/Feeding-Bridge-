@@ -52,7 +52,7 @@ const DashboardLayout = ({ title, children, sidebarLinks, activeLink }: Dashboar
       <aside className="hidden md:flex flex-col w-64 border-r bg-white">
         <div className="p-4 border-b">
           <Link to="/" className="flex items-center gap-2">
-            <span className="font-bold text-xl text-foodbridge-primary">FoodBridge</span>
+            <span className="font-bold text-xl text-foodbridge-primary">FeedingBridge</span>
           </Link>
         </div>
         <div className="p-4">

@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1 - Logo & Description */}
           <div className="md:col-span-2">
-            <h2 className="font-bold text-2xl text-foodbridge-primary">FoodBridge</h2>
+            <h2 className="font-bold text-2xl text-foodbridge-primary">FeedingBridge</h2>
             <p className="mt-4 text-gray-600 max-w-md">
               Connecting food surplus with those in need. Our platform brings together donors, 
               NGOs, and volunteers to reduce food waste and fight hunger.
@@ -77,7 +77,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-200 mt-12 pt-8">
           <p className="text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} FoodBridge. All rights reserved.
+            © {new Date().getFullYear()} FeedingBridge. All rights reserved.
           </p>
         </div>
       </div>
