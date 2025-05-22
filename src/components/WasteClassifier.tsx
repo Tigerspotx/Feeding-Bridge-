@@ -25,7 +25,6 @@ const WasteClassifier = () => {
       // Check file type and size
       if (!file.type.includes('image/')) {
         toast({
-          title: "Invalid file type",
           description: "Please upload an image file (JPEG, PNG, etc.)",
           variant: "destructive",
         });
@@ -34,7 +33,6 @@ const WasteClassifier = () => {
       
       if (file.size > 5 * 1024 * 1024) { // 5MB limit
         toast({
-          title: "File too large",
           description: "Please upload an image smaller than 5MB",
           variant: "destructive",
         });
@@ -71,13 +69,11 @@ const WasteClassifier = () => {
       setClassificationResult(result);
       
       toast({
-        title: "Classification Complete",
         description: `This item appears to be ${result.category}`,
       });
     } catch (error) {
       console.error('Classification error:', error);
       toast({
-        title: "Classification Error",
         description: "We couldn't process this image. Please try another.",
         variant: "destructive",
       });
