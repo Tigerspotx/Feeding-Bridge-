@@ -19,6 +19,7 @@ import AboutUs from "./pages/AboutUs";
 import DonorHistory from "./pages/DonorHistory";
 import Profile from "./pages/Profile";
 import WasteClassifier from "./pages/WasteClassifier";
+import DonationRouting from "./pages/DonationRouting";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
             <Route path="/donor-history" element={<DonorHistory />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/waste-classifier" element={<WasteClassifier />} />
+            <Route path="/donation-routing" element={<DonationRouting />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
