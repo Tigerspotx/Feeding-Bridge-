@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
@@ -140,10 +139,7 @@ const DonationRouting = () => {
 
   const handleConfirmRouting = () => {
     if (!selectedDonation || !selectedNGO) {
-      toast({
-        title: "Selection incomplete", 
-        description: "Please select an NGO to route this donation."
-      });
+      toast("Selection incomplete. Please select an NGO to route this donation.");
       return;
     }
 
@@ -168,10 +164,7 @@ const DonationRouting = () => {
       setSelectedDonation(null);
       setSelectedNGO(null);
 
-      toast({
-        title: "Donation routed successfully", 
-        description: "The food donation has been assigned to the selected NGO."
-      });
+      toast("Donation routed successfully. The food donation has been assigned to the selected NGO.");
     }, 1500);
   };
 

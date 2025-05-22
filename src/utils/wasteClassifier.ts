@@ -1,6 +1,4 @@
 
-import { pipeline } from '@huggingface/transformers';
-
 type WasteCategory = 'recyclable' | 'compostable' | 'hazardous' | 'general';
 
 // Mock waste classification function since we can't actually use Hugging Face's transformers

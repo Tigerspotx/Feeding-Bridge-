@@ -30,19 +30,13 @@ const WasteClassifier = () => {
       // Reset classification
       setClassification(null);
       
-      toast({
-        title: "Image selected",
-        description: `${file.name} is ready to be classified.`
-      });
+      toast(`Image selected: ${file.name} is ready to be classified.`);
     }
   };
 
   const handleClassify = async () => {
     if (!selectedFile) {
-      toast({
-        title: "No image selected",
-        description: "Please select an image to classify."
-      });
+      toast("No image selected. Please select an image to classify.");
       return;
     }
 
@@ -52,16 +46,10 @@ const WasteClassifier = () => {
       const result = await classifyWaste(selectedFile);
       setClassification(result);
       
-      toast({
-        title: "Classification complete",
-        description: `This item is ${result}.`
-      });
+      toast(`Classification complete: This item is ${result}.`);
     } catch (error) {
       console.error("Classification error:", error);
-      toast({
-        title: "Classification failed",
-        description: "There was an error classifying your image. Please try again."
-      });
+      toast("Classification failed. There was an error classifying your image. Please try again.");
     } finally {
       setIsClassifying(false);
     }
