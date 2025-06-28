@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -73,7 +72,10 @@ const AboutUs = () => {
         ...content,
         [editField]: editValue
       });
-      toast(`Successfully updated ${editField.replace(/([A-Z])/g, ' $1').toLowerCase()}`);
+      toast({
+        title: "Success",
+        description: `Successfully updated ${editField.replace(/([A-Z])/g, ' $1').toLowerCase()}`
+      });
     }
     setEditing(false);
   };
@@ -86,7 +88,10 @@ const AboutUs = () => {
 
   const copyShareLink = () => {
     navigator.clipboard.writeText(window.location.href);
-    toast("About page link copied to clipboard!");
+    toast({
+      title: "Link copied!",
+      description: "About page link copied to clipboard!"
+    });
   };
 
   return (
