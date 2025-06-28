@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Map, Package, Truck, Users, PieChart, Building } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import AIChat from '@/components/AIChat';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
@@ -422,6 +422,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <AIChat />
     </div>
   );
 };
